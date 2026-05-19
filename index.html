@@ -64,23 +64,33 @@
       z-index: 2;
     }
 
-    /* Mobile Ansicht */
-    @media (max-width: 768px) {
+   @media (max-width: 768px) {
 
-      body {
-        background-position: center top;
-      }
+  body {
 
-      h1 {
+    /* Bild linksbündig auf Mobile */
+    background-position: left center;
 
-        left: 50%;
+    background-size: cover;
+  }
 
-        font-size: 42px;
+  h1 {
 
-        top: 40px;
-      }
+    /* deutlich weiter rechts */
+    left: 72%;
 
-    }
+    top: 70px;
+
+    font-size: 52px;
+
+    line-height: 0.95;
+
+    text-align: left;
+
+    transform: translateX(-50%);
+  }
+
+}
 
   </style>
 </head>
@@ -89,53 +99,52 @@
 
   <h1>Doktor Rapp</h1>
 
-  <!-- Konfetti -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+ <!-- Konfetti -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
-  <script>
+<script>
 
-    window.onload = () => {
+  window.onload = () => {
 
-      const duration = 7000;
+    const duration = 7000;
 
-      const end = Date.now() + duration;
+    const end = Date.now() + duration;
 
-      const colors = [
-        '#ff4d4d',
-        '#ffd93d',
-        '#6bff95',
-        '#4d96ff',
-        '#b967ff',
-        '#ff6ec7'
-      ];
+    const colors = [
+      '#ff4d4d',
+      '#ffd93d',
+      '#6bff95',
+      '#4d96ff',
+      '#b967ff',
+      '#ff6ec7'
+    ];
 
-      (function frame() {
+    (function frame() {
 
-        confetti({
-          particleCount: 8,
-          angle: 60,
-          spread: 90,
-          origin: { x: 0 },
-          colors: colors
-        });
+      confetti({
 
-        confetti({
-          particleCount: 8,
-          angle: 120,
-          spread: 90,
-          origin: { x: 1 },
-          colors: colors
-        });
+        particleCount: 12,
+        spread: 120,
+        startVelocity: 45,
+        gravity: 0.9,
+        ticks: 300,
+        origin: {
+          x: Math.random(),
+          y: 0
+        },
+        colors: colors
 
-        if (Date.now() < end) {
-          requestAnimationFrame(frame);
-        }
+      });
 
-      }());
+      if (Date.now() < end) {
+        requestAnimationFrame(frame);
+      }
 
-    };
+    }());
 
-  </script>
+  };
+
+</script>
 
 </body>
 </html>
