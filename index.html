@@ -46,11 +46,14 @@
       position: absolute;
 
       top: 60px;
-      left: 50%;
+
+      /* weiter rechts */
+      left: 67%;
 
       transform: translateX(-50%);
 
-      font-size: 72px;
+      /* etwas kleiner */
+      font-size: 60px;
 
       font-weight: 400;
 
@@ -69,7 +72,11 @@
       }
 
       h1 {
-        font-size: 48px;
+
+        left: 50%;
+
+        font-size: 42px;
+
         top: 40px;
       }
 
@@ -89,25 +96,33 @@
 
     window.onload = () => {
 
-      const duration = 3000;
+      const duration = 7000;
+
       const end = Date.now() + duration;
 
-      const colors = ['#000000', '#ffffff', '#666666'];
+      const colors = [
+        '#ff4d4d',
+        '#ffd93d',
+        '#6bff95',
+        '#4d96ff',
+        '#b967ff',
+        '#ff6ec7'
+      ];
 
       (function frame() {
 
         confetti({
-          particleCount: 5,
+          particleCount: 8,
           angle: 60,
-          spread: 70,
+          spread: 90,
           origin: { x: 0 },
           colors: colors
         });
 
         confetti({
-          particleCount: 5,
+          particleCount: 8,
           angle: 120,
-          spread: 70,
+          spread: 90,
           origin: { x: 1 },
           colors: colors
         });
